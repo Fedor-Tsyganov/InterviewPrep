@@ -13,7 +13,7 @@ class Solution:
         result = dict()
         for i, num in enumerate(nums):
             x = target - num
-            if result[x]:
+            if x in result:
                 return [result[x], i]
             result[num] = i
         return []
