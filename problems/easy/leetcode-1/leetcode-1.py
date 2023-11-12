@@ -1,3 +1,4 @@
+from typing import List
 # TwoSum: https://leetcode.com/problems/two-sum/description/
 
 # Problem Statement:
@@ -7,5 +8,12 @@
 # 
 # You can return the answer in any order.
 
-def twoSum(nums, target) -> Int:
-    pass
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        result = dict()
+        for i, num in enumerate(nums):
+            x = target - num
+            if result[x]:
+                return [result[x], i]
+            result[num] = i
+        return []
